@@ -1,22 +1,25 @@
-// Smooth scrolling
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+const buttons = document.querySelectorAll('.tab-button');
+const contents = document.querySelectorAll('.tab-content');
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    contents.forEach(c => c.style.display = 'none');
+    document.getElementById(btn.getAttribute('data-tab')).style.display = 'block';
+  });
 });
 
-const container = document.getElementById("line-container");
+const themeToggleBtn = document.getElementById('theme-toggle');
 
-// Generate multiple lines
-for (let i = 0; i < 15; i++) {
-  const line = document.createElement("div");
-  line.classList.add("line");
-  const xPosition = Math.random() * 100 + "vw";
-  line.style.setProperty("--x", xPosition);
-  line.style.animationDelay = Math.random() * -50 + "s"; /* Adjusted to match slower movement */
-  container.appendChild(line);
-}
+themeToggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  
+  // Toggle icon between moon and sun
+  if (document.body.classList.contains('light-mode')) {
+    themeToggleBtn.textContent = '☀️';  // sun icon for light mode
+  } else {
+    themeToggleBtn.textContent = '🌙';  // moon icon for dark mode
+  }
+});
