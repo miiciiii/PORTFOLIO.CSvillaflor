@@ -69,24 +69,52 @@ Sidebar
 
 /*
 ################################################################
-Highlights 
+Highlights
 ################################################################
 */
 .highlights-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  height: 2rem;
   margin: 1rem 0;
+  border-radius: 20px;
+  background: #1e1e1e;
+  box-sizing: border-box;
+}
+
+.highlight-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: scrollLeft 15s linear infinite;
 }
 
 .highlight {
   background-color: #2196f3;
   color: #fff;
-  padding: 0.3rem 0.6rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
-  text-align: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
 }
+
+/* Keyframes for infinite scrolling */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* 🔹 only move half (because duplicated set) */
+  }
+}
+
+/* Optional: pause on hover */
+.highlights-container:hover .highlight-track {
+  animation-play-state: paused;
+}
+
 
 /*
 ################################################################
@@ -222,42 +250,89 @@ About Me Tab
 */
 .about-wrapper {
   font-size: 1rem;
-  line-height: 2.5;
+  line-height: 1.8;
   color: #ddd;
-  background-color: #181818;
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 2rem 0;
+  overflow: hidden;
 }
 
-.about-wrapper strong {
-  color: #0f62fe;
+.about-right {
+  float: right;
+  margin-right: 5rem;  /* pushes animation toward middle */
+  margin-left: 5rem;   /* gives space from text */
+  margin-top: 3rem;     /* pushes animation lower */
+  margin-bottom: 1rem;
+  width: 280px;
+  height: 280px;
+  position: relative;
 }
 
+#ai-animation {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: block;
+}
+
+/* Skills list */
 .skills-highlight {
   list-style: none;
   padding: 0;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
 .skills-highlight li {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
   padding-left: 1.5rem;
   position: relative;
+  transition: transform 0.3s ease;
 }
-
+.skills-highlight li:hover {
+  transform: translateX(8px);
+  color: #fff;
+}
 .skills-highlight li i {
   color: #0f62fe;
   position: absolute;
   left: 0;
-  top: 0.1rem;
+  top: 0.2rem;
+  font-size: 1.1rem;
 }
 
+/* Closing text */
 .closing {
   margin-top: 1.5rem;
   font-weight: 500;
   color: #eee;
 }
+
+/* Fade-in stagger animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+.fade-in.delay-1 { animation-delay: 0.3s; }
+.fade-in.delay-2 { animation-delay: 0.6s; }
+.fade-in.delay-3 { animation-delay: 0.9s; }
+.fade-in.delay-4 { animation-delay: 1.2s; }
+.fade-in.delay-5 { animation-delay: 1.5s; }
+.fade-in.delay-6 { animation-delay: 1.8s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-right {
+    float: none;
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+}
+
+
 
 /*
 ################################################################
@@ -345,17 +420,29 @@ Portfolio Tab
 }
 
 .project-image {
-  width: 220px;
-  height: 150px;
+  width: 200px;
+  height: 140px;
   background-color: #2b2b2b;
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #888;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   flex-shrink: 0;
-  border: 2px dashed #444;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
 }
 
 .project-info h3 {
@@ -401,15 +488,28 @@ Portfolio Tab
   width: 200px;
   height: 140px;
   background-color: #2b2b2b;
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #888;
   font-size: 0.85rem;
   flex-shrink: 0;
-  border: 2px dashed #444;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
+
+.certificate-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+}
+
 
 .certificate-info h3 {
   margin-top: 0;
@@ -436,24 +536,6 @@ Animation
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* 
-################################################################
-Footer
-################################################################
-*/
-
-footer {
-  width: 100%;
-  padding: 1rem;
-  background-color: #1e1e1e;
-  border-top: 1px solid #2c2c2c;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #888;
-  margin-top: 0.5rem;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* 
@@ -548,6 +630,29 @@ Responsive (Tablets & Small Screens)
   }
 }
 
+/* #############################
+   Modal for Hover
+############################# */
+.hover-modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); max-width: 90%;
+  max-height: 90%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 12px; 
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.hover-modal img {
+  max-width: 100%; 
+  max-height: 100%; 
+  border-radius: 10px;
+}
+
 /* 
 ################################################################
 Ultra Small Screens (Phones < 480px)
@@ -584,4 +689,21 @@ Ultra Small Screens (Phones < 480px)
   footer {
     font-size: 0.75rem;
   }
+}
+
+/* 
+################################################################
+Footer
+################################################################
+*/
+footer {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  border-top: 1px solid #2c2c2c;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.5rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
 }

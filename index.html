@@ -23,30 +23,26 @@
     <!-- Layout Wrapper -->
     <!--####################-->
     <div class="layout">
+
       <!--####################-->
       <!-- Sidebar -->
       <!--####################-->
       <aside class="personal-info-sidebar">
         <div class="profile-pic">
-          <img src="images/professionalpic.jpg" alt="Profile Picture" />
+          <img src="images/etc/professionalpic.jpg" alt="Profile Picture" />
         </div>
 
         <h2>Justin John Mico Villaflor</h2>
 
+        <!-- Highlight Marquee -->
         <div class="highlights-container">
-          <span class="highlight">Computer Science</span>
-          <span class="highlight">Full Stack Developer</span>
-          <span class="highlight">Machine Learning Enthusiast</span>
-          <span class="highlight">Data Science</span>
-          <span class="highlight">API</span>
+          <div class="highlight-track" id="highlight-track"></div>
         </div>
 
         <div class="contact-section">
           <h3>Contact</h3>
           <p><i class="fas fa-map-marker-alt"></i> Laguna, Philippines</p>
-          <p>
-            <i class="fas fa-envelope"></i> micovillaflor.comsci.dev@gmail.com
-          </p>
+          <p><i class="fas fa-envelope"></i> micovillaflor.comsci.dev@gmail.com</p>
           <p><i class="fas fa-phone"></i> +63 910 410 4755</p>
           <p>
             <i class="fab fa-github"></i>
@@ -54,15 +50,13 @@
           </p>
           <p>
             <i class="fab fa-linkedin"></i>
-            <a
-              href="https://www.linkedin.com/in/villaflorjustinmico-csportfolio"
-              target="_blank"
-            >
+            <a href="https://www.linkedin.com/in/villaflorjustinmico-csportfolio" target="_blank">
               /in/villaflorjustinmico-csportfolio
             </a>
           </p>
         </div>
       </aside>
+
 
       <!--####################-->
       <!-- Main Content -->
@@ -87,59 +81,69 @@
           <h2>About Me</h2>
 
           <div class="about-wrapper">
-            <p class="intro">
-              Hi, I'm <strong>Justin John Mico Villaflor</strong>, a passionate
-              <strong>Full Stack Developer</strong> with a deep drive for
-              solving real-world problems through code and design. With a strong
-              foundation in <strong>Computer Science</strong> and a creative eye
-              for <strong>UI/UX</strong>, I bring both logic and aesthetics into
-              every project I build.
-            </p>
+            
+            <!-- Floating Animation (Right) -->
+            <div class="about-right">
 
-            <p>
-              I'm highly skilled in <strong>JavaScript</strong>,
-              <strong>React</strong>, <strong>Node.js</strong>, and
-              <strong>Python</strong>, and I’ve also dived deep into
-              <strong>Machine Learning</strong> and
-              <strong>AI-driven development</strong>. My work isn’t just about
-              clean code — it's about crafting experiences that users love and
-              that scale effectively.
-            </p>
+              <canvas id="ai-animation"></canvas>
 
-            <p>
-              Beyond development, I'm an
-              <strong>Open Source Contributor</strong> and lifelong learner —
-              always exploring emerging technologies and ways to build faster,
-              better, and smarter. My strengths include:
-            </p>
+            </div>
 
-            <ul class="skills-highlight">
-              <li>
-                <i class="fas fa-check-circle"></i> Writing clean, scalable, and
-                maintainable code
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Rapid prototyping and
-                turning ideas into live products
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Deep understanding of system
-                design and architecture
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Clear communication,
-                teamwork, and technical leadership
-              </li>
-            </ul>
+            <!-- Text Content -->
+            <div class="about-left">
+              <p class="intro fade-in delay-1">
+                Hi, I'm <strong>Justin John Mico Villaflor</strong>, a
+                <strong>Full Stack Developer & AI/ML Engineer</strong>
+                passionate about building scalable, intelligent systems that solve real-world problems.
+              </p>
 
-            <p class="closing">
-              I’m not just applying for a job — I’m looking to contribute to a
-              team that values innovation, collaboration, and impact. If you're
-              seeking someone who can design, build, and lead with excellence,
-              I’d love to connect. lorem10000
-            </p>
+              <p class="fade-in delay-2">
+                My journey has taken me through diverse projects: from developing
+                <strong>AI-driven campus safety systems</strong> and
+                <strong>scientific project monitoring platforms</strong>, to creating
+                <strong>digital libraries</strong> and
+                <strong>healthcare AI assistants</strong>. Each project taught me how to
+                blend <strong>clean code</strong>, <strong>robust backend architecture</strong>, and
+                <strong>intuitive design</strong> into products that make an impact.
+              </p>
+
+              <p class="fade-in delay-3">
+                I thrive in environments where innovation meets practicality. Whether it’s
+                deploying <strong>machine learning models with Django</strong>,
+                engineering <strong>REST APIs</strong>, or automating workflows with
+                <strong>Make</strong> and <strong>n8n</strong>, I love turning complex
+                ideas into seamless, real-world solutions.
+              </p>
+
+              <h3 class="fade-in delay-4">What I Bring to the Table</h3>
+              <ul class="skills-highlight fade-in delay-5">
+                <li><i class="fas fa-check-circle"></i> Expertise in
+                  <strong>Full Stack Development</strong> (Django, Laravel, React)
+                </li>
+                <li><i class="fas fa-check-circle"></i> Proven experience in
+                  <strong>AI/ML model training, deployment, and API integration</strong>
+                </li>
+                <li><i class="fas fa-check-circle"></i> Strong background in
+                  <strong>Database Design & Optimization</strong> (MySQL, MongoDB, Firebase)
+                </li>
+                <li><i class="fas fa-check-circle"></i> Hands-on knowledge in
+                  <strong>DevOps & Deployment</strong> (GitHub Actions, Docker, Vercel)
+                </li>
+                <li><i class="fas fa-check-circle"></i> Passion for building
+                  <strong>scalable, user-centered applications</strong>
+                </li>
+              </ul>
+
+              <p class="closing fade-in delay-6">
+                Beyond technical skills, I value <strong>collaboration, continuous
+                learning, and problem-solving with purpose</strong>. If you're looking for
+                a developer who can architect systems, deploy AI features, and build
+                intuitive apps that scale — let's connect.
+              </p>
+            </div>
           </div>
         </div>
+
 
         <!--####################-->
         <!-- Resume Tab -->
@@ -148,103 +152,114 @@
           <h2>Resume</h2>
 
           <div class="resume-wrapper">
+            <!-- Professional Summary -->
+            <section class="resume-section">
+              <h3>Professional Summary</h3>
+              <p>
+                Full Stack Developer with 4+ years of experience building scalable web,
+                mobile, and AI-powered applications. Proven track record of delivering
+                end-to-end solutions from architecture to deployment across freelance
+                and client-based projects. Specialized in integrating AI/ML tools into
+                real-world products to enhance automation and user experience. Passionate
+                about solving practical problems with clean code, intuitive interfaces,
+                and efficient backends.
+              </p>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="resume-section">
+              <h3>Technical Skills</h3>
+              <ul class="skills-highlight">
+                <li><i class="fas fa-check-circle"></i> Full Stack & Web Development</li>
+                <li><i class="fas fa-check-circle"></i> API Design & Backend Development</li>
+                <li><i class="fas fa-check-circle"></i> AI & Automation Integration</li>
+                <li><i class="fas fa-check-circle"></i> Tools, DevOps & Deployment</li>
+                <li><i class="fas fa-check-circle"></i> JavaScript, TypeScript, Python, C++</li>
+                <li><i class="fas fa-check-circle"></i> Django, Django REST Framework, Laravel, React</li>
+                <li><i class="fas fa-check-circle"></i> MySQL, MongoDB, Firebase, RESTful APIs, JWT</li>
+                <li><i class="fas fa-check-circle"></i> OpenAI API (GPT Models), NLP, Python Scripting</li>
+                <li><i class="fas fa-check-circle"></i> Workflow Automation (Make, n8n)</li>
+                <li><i class="fas fa-check-circle"></i> Git, GitHub Actions (CI/CD), Docker (basic)</li>
+                <li><i class="fas fa-check-circle"></i> Vercel, Agile Development, Firebase Hosting</li>
+              </ul>
+            </section>
+
+            <!-- Professional Experience -->
             <section class="resume-section">
               <h3>Professional Experience</h3>
 
               <div class="resume-item">
-                <h4>
-                  Data Analyst & ML Developer | I-Comprehend (Undergraduate
-                  Thesis)
-                </h4>
-                <span class="resume-date">2024</span>
+                <h4>Project Monitoring System | Technical Assistant & AI Feature Engineer</h4>
+                <span class="resume-date">Jan 2025 – Jun 2025</span>
                 <p>
-                  Developed and trained a machine learning model to predict
-                  <strong>Cognitive Load</strong> using
-                  <strong>Computer Vision</strong> techniques. Implemented a
-                  complete ML pipeline: data preprocessing, model training, and
-                  evaluation. Integrated the model with the main application via
-                  a <strong>Django REST API</strong>, enabling real-time
-                  predictions. Contributed as a
-                  <strong>Full-Stack Developer</strong>, building robust backend
-                  logic and API endpoints to support seamless ML deployment.
+                  Developed and enhanced a centralized platform for DOST-FPRDI to monitor,
+                  manage, and track the lifecycle of scientific projects. Engineered an
+                  AI-powered suggestion tool to recommend project titles, trained on historical
+                  data, and integrated with Laravel via RESTful APIs.
                 </p>
+                <p><strong>Technologies:</strong> Laravel, Python, REST API, AI model training</p>
               </div>
 
               <div class="resume-item">
-                <h4>
-                  Backend Developer – Library Student Entry Management System
-                </h4>
-                <span class="resume-date">2023</span>
+                <h4>Integrated Campus Safety and Security System | Data Analyst & ML Developer</h4>
+                <span class="resume-date">Nov 2024 – Jan 2025</span>
                 <p>
-                  Built and maintained the backend using
-                  <strong>Django</strong> with <strong>MySQL</strong>, ensuring
-                  reliable and secure data operations. Collaborated on the
-                  frontend with <strong>HTML</strong>, <strong>CSS</strong>, and
-                  <strong>JavaScript</strong> to create an intuitive UI for
-                  students and staff. Optimized database queries and server
-                  logic, significantly improving performance and scalability.
+                  Built an AI-driven safety system using YOLOv8 and TensorFlow to detect and
+                  classify individuals at campus entry points. Developed backend in Django for
+                  real-time identity classification. System currently in testing phase.
                 </p>
-              </div>
-            </section>
-
-            <section class="resume-section">
-              <h3>Education</h3>
-
-              <div class="resume-item">
-                <h4>
-                  Bachelor of Science in Computer Science | Laguna State
-                  Polytechnic University Sta. Cruz Campus
-                </h4>
-                <span class="resume-date">2025</span>
-                <p>
-                  Focused coursework in software engineering, algorithms,
-                  databases, and machine learning. Dean’s Lister for multiple
-                  semesters.
-                </p>
+                <p><strong>Technologies:</strong> Python, TensorFlow, YOLOv8, Roboflow, Django, Computer Vision</p>
               </div>
 
               <div class="resume-item">
-                <h4>General Academic strand | South Greenville School</h4>
-                <span class="resume-date">Graduated with Honors</span>
+                <h4>NextChapter | Full Stack Developer</h4>
+                <span class="resume-date">Jan 2022 – Apr 2022</span>
                 <p>
-                  Consistently ranked among the top students throughout all SHS
-                  years. Earned
-                  <strong>3 Academic Excellence Medals</strong> and
-                  <strong>4 Recognition Awards</strong>, reflecting a strong
-                  academic performance and exceptional leadership. Recognized
-                  not only for academic achievement but also for being
-                  <strong
-                    >actively involved in social, extracurricular, and community
-                    activities</strong
-                  >.
+                  Created a campus-wide digital library platform connecting multiple
+                  academic institutions. Designed full stack system with React and Django,
+                  integrated AI-powered recommendations, and improved academic research
+                  accessibility across campuses.
                 </p>
+                <p><strong>Technologies:</strong> React, Django, REST API, AI Recommendation System</p>
               </div>
-            </section>
 
-            <section class="resume-section">
-              <h3>Technical Skills</h3>
-              <ul class="skills-highlight">
-                <li>
-                  <i class="fas fa-check-circle"></i> JavaScript, Python, C++
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> React, Node.js, Express,
-                  Laravel
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> MySQL, MongoDB, Firebase
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Git, GitHub, Linux CLI
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> UI/UX Design, Figma,
-                  Tailwind CSS
-                </li>
-              </ul>
+              <div class="resume-item">
+                <h4>I-Comprehend (Undergraduate Thesis) | Data Analyst & ML Developer</h4>
+                <span class="resume-date">Dec 2023 – Dec 2024</span>
+                <p>
+                  Led AI development for an interactive reading comprehension platform.
+                  Deployed NLP and Computer Vision models, including ResNet50v2, via
+                  Python REST APIs integrated with Firebase. Recognized with a Scholarly
+                  Publication Excellence Award.
+                </p>
+                <p><strong>Technologies:</strong> Python, NLP, ResNet50v2, Firebase, REST API</p>
+              </div>
+
+              <div class="resume-item">
+                <h4>PerioCare AI | Full Stack Developer</h4>
+                <span class="resume-date">Jul 2025</span>
+                <p>
+                  Developed an AI-driven support system for dental health offices to manage
+                  after-hours patient concerns. Integrated an NLP conversational agent into
+                  Django, enabling empathetic, context-aware responses and incident reporting.
+                </p>
+                <p><strong>Technologies:</strong> Django, Python, NLP, AI Chat Agent</p>
+              </div>
+
+              <div class="resume-item">
+                <h4>Better Parenting AI | Technical Assistant & API Developer</h4>
+                <span class="resume-date">Aug 2025</span>
+                <p>
+                  Built backend infrastructure for a virtual parenting coach powered by OpenAI API.
+                  Implemented NLP-based empathetic responses, Firebase integration, and session
+                  flow management to deliver personalized parenting guidance.
+                </p>
+                <p><strong>Technologies:</strong> Firebase, React, Python, OpenAI API, NLP</p>
+              </div>
             </section>
           </div>
         </div>
+
 
         <!--####################-->
         <!-- Portfolio Tab -->
@@ -252,24 +267,16 @@
         <div class="tab-content" id="portfolio" style="display: none">
           <h2>Projects</h2>
 
-          <div class="portfolio-wrapper">
-            <!-- Project Card -->
-            <div class="project-card">
-              <div class="project-image">
-                <span class="image-placeholder">[ Image Placeholder ]</span>
-              </div>
-              <div class="project-info">
-                <h3>Project Title</h3>
-                <p>
-                  Brief description of the project goes here. Explain what it
-                  does and highlight the technologies used. Talk about the value
-                  it created and what specific skills you developed through this
-                  project (e.g., backend logic, API integration, UI design,
-                  machine learning, etc.).
-                </p>
-              </div>
-            </div>
-          </div>
+        <div id="portfolioWrapper" class="portfolio-wrapper"></div>
+        
+
+        <!-- Hover modal for project images -->
+        <div id="projectModal" class="hover-modal"
+            onmouseenter="cancelCloseModal()"
+            onmouseleave="scheduleCloseModal('projectModal')">
+          <img id="projectModalImage" alt="Enlarged Project Image" />
+        </div>
+
         </div>
 
         <!--####################-->
@@ -278,25 +285,16 @@
         <div class="tab-content" id="certificates" style="display: none">
           <h2>Certificates</h2>
 
-          <div class="certificates-wrapper">
-            <!-- Certificate Card -->
-            <div class="certificate-card">
-              <div class="certificate-image">
-                <span class="image-placeholder"
-                  >[ Certificate Placeholder ]</span
-                >
-              </div>
-              <div class="certificate-info">
-                <h3>Certificate Title</h3>
-                <p><strong>Issuer:</strong> e.g., Coursera / Google / IBM</p>
-                <p>
-                  Brief description of the certificate. You can mention what you
-                  learned, tools/skills gained, or why it adds value to your
-                  professional profile.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div id="certificatesWrapper" class="certificates-wrapper"></div>
+
+        <!-- Hover modal for certificate images -->
+        <div id="certificateModal" class="hover-modal"
+            onmouseenter="cancelCloseModal()"
+            onmouseleave="scheduleCloseModal('certificateModal')">
+          <img id="certificateModalImage" alt="Enlarged Certificate Image" />
+        </div>
+
+
         </div>
       </main>
 
