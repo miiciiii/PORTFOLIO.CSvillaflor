@@ -254,6 +254,23 @@ About Me Tab
   color: #ddd;
   padding: 2rem 0;
   overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.about-left p,
+.about-left h3,
+.about-left ul.skills-highlight {
+  margin-bottom: 1.8rem;
+}
+
+.about-left p,
+.about-left li {
+  line-height: 1.9;
+}
+
+.skills-highlight li {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
 }
 
 .about-right {

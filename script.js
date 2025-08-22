@@ -215,20 +215,26 @@ const projects = [
   {
     src: "images/projects/IComprehend.png",
     title: "iComprehend (Undergraduate Thesis)",
-    description: "Built a full-stack web app using React and Node.js, integrating REST APIs and responsive UI design."
+    description: "Developed an AI-powered text comprehension tool as part of my undergraduate thesis. Implemented NLP algorithms to analyze, summarize, and provide insights on academic texts, enhancing reading efficiency."
   },
   {
     src: "images/projects/Promis.png",
     title: "Project Monitoring System (OJT Final Project)",
-    description: "Developed a machine learning model to predict customer churn, improving retention by 15%."
+    description: "Created a web-based system to track and monitor ongoing projects within the organization. Integrated automated notifications, dashboards, and real-time progress tracking to improve project visibility."
   },
   {
     src: "images/projects/PeriocareAI.jpg",
-    title: "Project Three",
-    description: "Created a mobile app with Flutter, featuring real-time notifications and smooth animations."
-  }
+    title: "Periocare AI",
+    description: "Designed an AI assistant for healthcare applications, leveraging ML models to provide patient monitoring insights, predictive analytics, and personalized recommendations for better care outcomes."
+  },
+  {
+    src: "images/projects/IntegratedCampusSecurity.jpg",
+    title: "Integrated Campus Security",
+    description: "Built a comprehensive campus security system using AI-driven analytics, real-time monitoring, and alerting mechanisms. The project enhanced safety through automated threat detection and reporting."
+  },
   // Add more projects as needed
 ];
+
 
 // Generate the portfolio cards dynamically
 const portfolioWrapper = document.getElementById("portfolioWrapper");
