@@ -78,7 +78,6 @@
         <!-- About Me Tab -->
         <!--####################-->
         <div class="tab-content active" id="about">
-          <h2>About Me</h2>
 
           <div class="about-wrapper">
             
@@ -149,123 +148,49 @@
         <!-- Resume Tab -->
         <!--####################-->
         <div class="tab-content" id="resume" style="display: none">
-          <h2>Resume</h2>
-
           <div class="resume-wrapper">
+
             <!-- Professional Summary -->
             <section class="resume-section">
               <h3>Professional Summary</h3>
               <p>
                 Full Stack Developer with 4+ years of experience building scalable web,
                 mobile, and AI-powered applications. Proven track record of delivering
-                end-to-end solutions from architecture to deployment across freelance
-                and client-based projects. Specialized in integrating AI/ML tools into
-                real-world products to enhance automation and user experience. Passionate
-                about solving practical problems with clean code, intuitive interfaces,
-                and efficient backends.
+                end-to-end solutions from architecture to deployment. Specialized in
+                integrating AI/ML tools into real-world products to enhance automation
+                and user experience.
               </p>
             </section>
 
             <!-- Technical Skills -->
             <section class="resume-section">
               <h3>Technical Skills</h3>
-              <ul class="skills-highlight">
-                <li><i class="fas fa-check-circle"></i> Full Stack & Web Development</li>
-                <li><i class="fas fa-check-circle"></i> API Design & Backend Development</li>
-                <li><i class="fas fa-check-circle"></i> AI & Automation Integration</li>
-                <li><i class="fas fa-check-circle"></i> Tools, DevOps & Deployment</li>
-                <li><i class="fas fa-check-circle"></i> JavaScript, TypeScript, Python, C++</li>
-                <li><i class="fas fa-check-circle"></i> Django, Django REST Framework, Laravel, React</li>
-                <li><i class="fas fa-check-circle"></i> MySQL, MongoDB, Firebase, RESTful APIs, JWT</li>
-                <li><i class="fas fa-check-circle"></i> OpenAI API (GPT Models), NLP, Python Scripting</li>
-                <li><i class="fas fa-check-circle"></i> Workflow Automation (Make, n8n)</li>
-                <li><i class="fas fa-check-circle"></i> Git, GitHub Actions (CI/CD), Docker (basic)</li>
-                <li><i class="fas fa-check-circle"></i> Vercel, Agile Development, Firebase Hosting</li>
-              </ul>
+              <div id="skills-container"></div>
+              <div id="skill-tooltip"></div>
             </section>
 
-            <!-- Professional Experience -->
+            <!--  Milestone Timeline -->
             <section class="resume-section">
-              <h3>Professional Experience</h3>
-
-              <div class="resume-item">
-                <h4>Project Monitoring System | Technical Assistant & AI Feature Engineer</h4>
-                <span class="resume-date">Jan 2025 – Jun 2025</span>
-                <p>
-                  Developed and enhanced a centralized platform for DOST-FPRDI to monitor,
-                  manage, and track the lifecycle of scientific projects. Engineered an
-                  AI-powered suggestion tool to recommend project titles, trained on historical
-                  data, and integrated with Laravel via RESTful APIs.
-                </p>
-                <p><strong>Technologies:</strong> Laravel, Python, REST API, AI model training</p>
-              </div>
-
-              <div class="resume-item">
-                <h4>Integrated Campus Safety and Security System | Data Analyst & ML Developer</h4>
-                <span class="resume-date">Nov 2024 – Jan 2025</span>
-                <p>
-                  Built an AI-driven safety system using YOLOv8 and TensorFlow to detect and
-                  classify individuals at campus entry points. Developed backend in Django for
-                  real-time identity classification. System currently in testing phase.
-                </p>
-                <p><strong>Technologies:</strong> Python, TensorFlow, YOLOv8, Roboflow, Django, Computer Vision</p>
-              </div>
-
-              <div class="resume-item">
-                <h4>NextChapter | Full Stack Developer</h4>
-                <span class="resume-date">Jan 2022 – Apr 2022</span>
-                <p>
-                  Created a campus-wide digital library platform connecting multiple
-                  academic institutions. Designed full stack system with React and Django,
-                  integrated AI-powered recommendations, and improved academic research
-                  accessibility across campuses.
-                </p>
-                <p><strong>Technologies:</strong> React, Django, REST API, AI Recommendation System</p>
-              </div>
-
-              <div class="resume-item">
-                <h4>I-Comprehend (Undergraduate Thesis) | Data Analyst & ML Developer</h4>
-                <span class="resume-date">Dec 2023 – Dec 2024</span>
-                <p>
-                  Led AI development for an interactive reading comprehension platform.
-                  Deployed NLP and Computer Vision models, including ResNet50v2, via
-                  Python REST APIs integrated with Firebase. Recognized with a Scholarly
-                  Publication Excellence Award.
-                </p>
-                <p><strong>Technologies:</strong> Python, NLP, ResNet50v2, Firebase, REST API</p>
-              </div>
-
-              <div class="resume-item">
-                <h4>PerioCare AI | Full Stack Developer</h4>
-                <span class="resume-date">Jul 2025</span>
-                <p>
-                  Developed an AI-driven support system for dental health offices to manage
-                  after-hours patient concerns. Integrated an NLP conversational agent into
-                  Django, enabling empathetic, context-aware responses and incident reporting.
-                </p>
-                <p><strong>Technologies:</strong> Django, Python, NLP, AI Chat Agent</p>
-              </div>
-
-              <div class="resume-item">
-                <h4>Better Parenting AI | Technical Assistant & API Developer</h4>
-                <span class="resume-date">Aug 2025</span>
-                <p>
-                  Built backend infrastructure for a virtual parenting coach powered by OpenAI API.
-                  Implemented NLP-based empathetic responses, Firebase integration, and session
-                  flow management to deliver personalized parenting guidance.
-                </p>
-                <p><strong>Technologies:</strong> Firebase, React, Python, OpenAI API, NLP</p>
+              <h3>Career Milestones</h3>
+              <div class="road-timeline-vertical-wrapper">
+                <div class="road-line-vertical"></div>
+                <div id="milestone-container" class="milestone-container"></div>
               </div>
             </section>
+
+            <!-- Lightbox Modal -->
+            <div class="image-modal" id="imageModal">
+              <span class="close-btn">&times;</span>
+              <img id="modalImg" src="" alt="Enlarged Image">
+            </div>
+
           </div>
         </div>
-
 
         <!--####################-->
         <!-- Portfolio Tab -->
         <!--####################-->
         <div class="tab-content" id="portfolio" style="display: none">
-          <h2>Projects</h2>
 
         <div id="portfolioWrapper" class="portfolio-wrapper"></div>
         
@@ -283,7 +208,6 @@
         <!-- Certificates Tab -->
         <!--####################-->
         <div class="tab-content" id="certificates" style="display: none">
-          <h2>Certificates</h2>
 
         <div id="certificatesWrapper" class="certificates-wrapper"></div>
 

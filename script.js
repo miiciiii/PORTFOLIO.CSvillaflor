@@ -489,3 +489,258 @@ function draw() {
 }
 
 draw();
+
+/* 
+################################################################
+Resume Tab
+################################################################
+*/
+const skillCategories = [
+  {
+    category: "Programming Languages",
+    skills: [
+      { name: "JavaScript", icon: "fab fa-js", description: "Built dynamic UIs, interactive features, and full-stack apps." },
+      { name: "TypeScript", icon: "fab fa-js", description: "Used for scalable React projects with strong type safety." },
+      { name: "Python", icon: "fab fa-python", description: "Applied for automation, scripting, API development, and machine learning." },
+      { name: "C++", icon: "fas fa-code", description: "Worked on algorithmic problem solving and systems programming." }
+    ]
+  },
+  {
+    category: "Frameworks & Libraries",
+    skills: [
+      { name: "Django", icon: "fas fa-server", description: "Developed full-stack apps and REST APIs with Django ORM." },
+      { name: "Django REST Framework", icon: "fas fa-server", description: "Created secure and scalable REST APIs for backend services." },
+      { name: "Laravel", icon: "fas fa-cogs", description: "Built backend systems, authentication, and role-based access apps." },
+      { name: "React", icon: "fab fa-react", description: "Developed responsive, component-based frontends with React hooks." }
+    ]
+  },
+  {
+    category: "Databases & APIs",
+    skills: [
+      { name: "MySQL", icon: "fas fa-database", description: "Designed relational schemas and optimized queries." },
+      { name: "MongoDB", icon: "fas fa-database", description: "Worked with NoSQL databases for flexible document storage." },
+      { name: "Firebase", icon: "fas fa-fire", description: "Implemented real-time databases and authentication." },
+      { name: "RESTful APIs", icon: "fas fa-network-wired", description: "Developed and consumed REST APIs across multiple projects." },
+      { name: "JWT", icon: "fas fa-key", description: "Integrated secure authentication using JWT tokens." }
+    ]
+  },
+  {
+    category: "AI / ML & Automation",
+    skills: [
+      { name: "OpenAI API (GPT Models)", icon: "fas fa-robot", description: "Built AI-driven chatbots and content generation tools." },
+      { name: "NLP", icon: "fas fa-brain", description: "Worked with text classification, tokenization, and semantic analysis." },
+      { name: "Python Scripting", icon: "fab fa-python", description: "Automated repetitive tasks, data pipelines, and file processing." },
+      { name: "Workflow Automation (Make, n8n)", icon: "fas fa-project-diagram", description: "Integrated services and automated workflows using no-code tools." }
+    ]
+  },
+  {
+    category: "DevOps & Deployment",
+    skills: [
+      { name: "Git", icon: "fab fa-git", description: "Version control for collaborative development and branching workflows." },
+      { name: "GitHub Actions (CI/CD)", icon: "fab fa-github", description: "Set up automated builds, testing, and deployment pipelines." },
+      { name: "Docker", icon: "fab fa-docker", description: "Containerized apps for consistent deployment across environments." },
+      { name: "Vercel", icon: "fas fa-cloud", description: "Deployed React/Next.js apps with serverless functions." },
+      { name: "Firebase Hosting", icon: "fas fa-fire", description: "Hosted and managed full-stack apps with real-time features." },
+      { name: "Agile Development", icon: "fas fa-tasks", description: "Worked in sprints, versioned tasks, and iterative delivery." }
+    ]
+  }
+];
+
+// Color palette
+const colors = ["#0f62fe", "#6a5acd", "#20c997", "#ffc107", "#ff6b6b", "#ff7f50", "#8e44ad", "#1abc9c", "#f39c12"];
+
+// Container for skills
+const skillsContainer = document.getElementById("skills-container");
+
+// Render skills with random colors
+skillCategories.forEach(cat => {
+  const catWrapper = document.createElement("div");
+  catWrapper.className = "skill-category";
+
+  const h4 = document.createElement("h4");
+  h4.textContent = cat.category;
+  catWrapper.appendChild(h4);
+
+  const skillRow = document.createElement("div");
+  skillRow.className = "skills-horizontal";
+
+  cat.skills.forEach(skill => {
+    const card = document.createElement("div");
+    card.className = "skill-card";
+    card.dataset.description = skill.description;
+
+    // Random color per skill
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    card.style.background = color + "22"; // semi-transparent
+    card.style.color = color;
+
+    card.innerHTML = `<i class="${skill.icon}"></i> ${skill.name}`;
+    skillRow.appendChild(card);
+  });
+
+  catWrapper.appendChild(skillRow);
+  skillsContainer.appendChild(catWrapper);
+});
+
+
+// Tooltip for hover
+const tooltip = document.getElementById("skill-tooltip");
+
+document.addEventListener("mouseover", (e) => {
+  const card = e.target.closest(".skill-card");
+  if (card) {
+    tooltip.textContent = card.dataset.description;
+    tooltip.classList.add("show");
+
+    // Get bounding rect relative to viewport
+    const rect = card.getBoundingClientRect();
+
+    // Get scroll offsets
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+    // Calculate top: place above the skill card
+    let top = rect.top + scrollTop - tooltip.offsetHeight - 6; // 6px margin
+    // Fallback below if not enough space
+    if (top < scrollTop) top = rect.bottom + scrollTop + 6;
+
+    // Calculate horizontal center
+    let left = rect.left + scrollLeft + rect.width / 2 - tooltip.offsetWidth / 2;
+    // Keep tooltip inside viewport horizontally
+    if (left < 8) left = 8;
+    if (left + tooltip.offsetWidth > document.body.clientWidth - 8) {
+      left = document.body.clientWidth - tooltip.offsetWidth - 8;
+    }
+
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${left}px`;
+  }
+});
+
+document.addEventListener("mouseout", (e) => {
+  if (e.target.closest(".skill-card")) {
+    tooltip.classList.remove("show");
+  }
+});
+
+// milestone data
+// milestone data
+const milestones = [
+  { 
+    year: "2020", 
+    title: "Senior High School Graduation", 
+    description: "Graduated at South Greenville School with Honors. Received 3 Non-Academic Awards and 4 Academic Awards.", 
+    image: "images/placeholders/2020-graduation.jpg" 
+  },
+  { 
+    year: "2021 - Year Start", 
+    title: "Start of Undergraduate Studies", 
+    description: "Enrolled at Laguna State Polytechnic University, taking Bachelor of Science in Computer Science. Adjusted and thrived in a new environment.", 
+    image: "images/placeholders/2021-university.jpg" 
+  },
+  { 
+    year: "2021 - Year End", 
+    title: "First Projects & Experience", 
+    description: "Began working on small freelance and personal projects to gain experience in web and software development.", 
+    image: "images/placeholders/2022-projects.png"
+  },
+  { 
+    year: "2023", 
+    title: "Undergraduate Thesis Development", 
+    description: "Started developing 'IComprehend', an AI-assisted learning tool, which was later recognized with the “Scholarly Publication Excellence Award.”", 
+    image: "images/placeholders/2023-thesis.png"  
+  },
+  { 
+    year: "2024", 
+    title: "Freelance Web Development", 
+    description: "Took on multiple web development projects, earning income while strengthening skills and helping finance academic needs.", 
+    image: "images/placeholders/2024-freelance.png" 
+  },
+  { 
+    year: "2025", 
+    title: "On-the-Job Training", 
+    description: "Started OJT, gathering real-world experience and applying academic knowledge to professional scenarios.", 
+    image: "images/placeholders/2025-ojt.jpg"  
+  },
+  { 
+    year: "Present", 
+    title: "Expanding Horizons", 
+    description: "Currently enhancing my skills, taking on projects, and building a foundation for my future career. I'm eager to land my first professional role — maybe it’s with you?", 
+    image: "images/placeholders/present-skills.jpg"  
+  }
+];
+
+
+const milestoneContainer = document.getElementById("milestone-container");
+
+milestones.forEach((ms, index) => {
+  const item = document.createElement("div");
+  item.className = `milestone ${index % 2 === 0 ? "left" : "right"}`;
+  item.innerHTML = `
+    <div class="milestone-side milestone-image">
+      <img src="${ms.image}" alt="${ms.title}">
+    </div>
+    <div class="milestone-dot"></div>
+    <div class="milestone-side milestone-content">
+      <span class="milestone-year">${ms.year}</span>
+      <h3>${ms.title}</h3>
+      <p>${ms.description}</p>
+    </div>
+  `;
+  milestoneContainer.appendChild(item);
+});
+
+// === Glow effect when beam passes dots ===
+function animateDots() {
+  const line = document.querySelector(".road-line-vertical");
+  const beam = line.querySelector("::before"); // can't directly select pseudo
+  const lineRect = line.getBoundingClientRect();
+
+  const dots = document.querySelectorAll(".milestone-dot");
+  const now = Date.now();
+
+  dots.forEach(dot => {
+    const dotRect = dot.getBoundingClientRect();
+    const dotCenterY = dotRect.top + dotRect.height / 2;
+
+    // compute beam cycle progress (sync with CSS duration)
+    const cycle = 3000; // match animation duration (3s)
+    const progress = (now % cycle) / cycle;
+    const beamY = lineRect.top + progress * lineRect.height;
+
+    if (Math.abs(dotCenterY - beamY) < 30) {
+      if (!dot.classList.contains("glow")) {
+        dot.classList.add("glow");
+        setTimeout(() => dot.classList.remove("glow"), 1500);
+      }
+    }
+  });
+
+  requestAnimationFrame(animateDots);
+}
+animateDots();
+
+// Lightbox for milestone images
+const milestoneImages = document.querySelectorAll(".milestone-image img");
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".image-modal .close-btn");
+
+milestoneImages.forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";   // show modal
+    modalImg.src = img.src;        // load clicked image
+  });
+});
+
+// Close modal when clicking X
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal when clicking outside image
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
