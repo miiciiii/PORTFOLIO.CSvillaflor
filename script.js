@@ -636,13 +636,13 @@ const milestones = [
     year: "2021 - Year Start", 
     title: "Start of Undergraduate Studies", 
     description: "Enrolled at Laguna State Polytechnic University, taking Bachelor of Science in Computer Science. Adjusted and thrived in a new environment.", 
-    image: "images/placeholders/2024-freelance.png" 
+    image: "images/placeholders/2021-university.jpg" 
   },
   { 
     year: "2021 - Year End", 
     title: "First Projects & Experience", 
     description: "Began working on small freelance and personal projects to gain experience in web and software development.", 
-    image: "images/placeholders/2022-projects.png"
+    image: "images/placeholders/2024-freelance.png"
   },
   { 
     year: "2023", 
@@ -654,7 +654,7 @@ const milestones = [
     year: "2024", 
     title: "Freelance Web Development", 
     description: "Took on multiple web development projects, earning income while strengthening skills and helping finance academic needs.", 
-    image: "images/placeholders/2021-university.jpg"
+    image: "images/placeholders/2022-projects.png"
   },
   { 
     year: "2025", 
